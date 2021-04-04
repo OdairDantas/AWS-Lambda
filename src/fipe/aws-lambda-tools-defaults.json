@@ -6,11 +6,15 @@
     "All the command line options for the Lambda command can be specified in this file."
   ],
   "profile": "",
-  "region": "",
-  "configuration": "Release",
-  "framework": "netcoreapp3.1",
-  "function-runtime": "dotnetcore3.1",
-  "function-memory-size": 256,
-  "function-timeout": 30,
-  "function-handler": "fipe::fipe.Function::FunctionHandler"
-}
+  "Environment": {
+    "Variables": {
+      "LAMBDA_NET_SERIALIZER_DEBUG": "true"
+    },
+    "region": "",
+    "configuration": "Release",
+    "framework": "netcoreapp3.1",
+    "function-runtime": "dotnetcore3.1",
+    "function-memory-size": 256,
+    "function-timeout": 30,
+    "function-handler": "fipe::fipe.Function::FunctionHandler"
+  }
