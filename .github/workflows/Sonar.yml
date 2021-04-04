@@ -1,14 +1,3 @@
-name: Sonar
-on:
-  push:
-    branches:
-      - master
-  pull_request:
-    types: [opened, synchronize, reopened]
-jobs:
-            - run: dotnet build ".\src\fipe.sln"
-            - run: dotnet test ".\src\fipe.sln"
-          .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
 name: Build
 on:
   push:
