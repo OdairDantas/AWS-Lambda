@@ -39,5 +39,6 @@ jobs:
         shell: powershell
         run: |
           .\.sonar\scanner\dotnet-sonarscanner begin /k:"OdairDantas_Lambda" /o:"odairdantas" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
-            dotnet build ".\src\fipe.sln"
+            - run: dotnet build ".\src\fipe.sln"
+            - run: dotnet test ".\src\fipe.sln"
           .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
